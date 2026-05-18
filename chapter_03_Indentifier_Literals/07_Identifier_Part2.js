@@ -2,19 +2,19 @@
 
 // 1. camelCase - first word lowercase, rest capitalized
 //    Used for: variables, functions
-var firstName = "Pramod";
+var firstName = "Shivi";
 var lastName = "Anand";
 var myFirstName = "Shivani";
 
 // 2. PascalCase (UpperCamelCase) - every word capitalized
 //    Used for: classes, constructors
-var FirstName = "Pramod";
+var FirstName = "Shivi";
 var LastName = "Anand";
 var MyClassName = "Student";
 
 // 3. snake_case - words separated by underscores, all lowercase
 //    Used for: file names, database columns (less common in JS)
-var first_name = "Pramod";
+var first_name = "Shivi";
 var last_name = "Anand";
 var my_variable_name = "Hello";
 

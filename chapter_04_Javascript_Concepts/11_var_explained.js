@@ -1,0 +1,23 @@
+var a = 10;// Global SCOPE
+
+// var is function scoped
+
+
+console.log(a);
+
+function printHello() {
+    console.log("Hello Testing!");
+    var a = 20; // Local Scope
+    console.log(a);
+    if (true) {
+        var a = 30;
+        console.log(a); // 30
+    }
+
+}
+
+printHello();
+
+var a = 50;
+
+// var == trump, flipper, dual faced, not trust worthy
