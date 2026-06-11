@@ -94,19 +94,38 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │   ├── 69_Node_readLine.js             - Node.js readline module
 │   └── 70_prompt_sync.js               - prompt-sync package for synchronous input
 │
-└── chapter_10_Loops/
-    ├── 71_for_loop.js                  - Introduction to for loops
-    ├── 72_For_loop.js                  - for loop with counter
-    ├── 73_for_loop2.js                 - for loop variations
-    ├── 74_IQ.js                        - Loop interview questions
-    ├── 75_Advanced_for_Loop            - Advanced for loop patterns (arrays preview)
-    ├── 76_While.js                     - while loop
-    ├── 77_Do_While.js                  - do...while loop
-    ├── 78_Do_While.js                  - do...while continued
-    ├── 79_IQ.js                        - while loop IQ questions
-    ├── 80_IQ.js                        - Loop IQ part 2
-    ├── 81_IQ.js                        - Loop IQ part 3
-    └── 82_IQ.js                        - Loop IQ part 4
+├── chapter_10_Loops/
+│   ├── 71_for_loop.js                  - Introduction to for loops
+│   ├── 72_For_loop.js                  - for loop with counter
+│   ├── 73_for_loop2.js                 - for loop variations
+│   ├── 74_IQ.js                        - Loop interview questions
+│   ├── 75_Advanced_for_Loop            - Advanced for loop patterns (arrays preview)
+│   ├── 76_While.js                     - while loop
+│   ├── 77_Do_While.js                  - do...while loop
+│   ├── 78_Do_While.js                  - do...while continued
+│   ├── 79_IQ.js                        - while loop IQ questions
+│   ├── 80_IQ.js                        - Loop IQ part 2
+│   ├── 81_IQ.js                        - Loop IQ part 3
+│   └── 82_IQ.js                        - Loop IQ part 4
+│
+├── chapter_11_Arrays/
+│   ├── 83_Arrays.js                    - Array introduction and empty arrays
+│   ├── 84_Arrays.js                    - Creating arrays (array literal)
+│   ├── 85_Access_Arrays.js             - Accessing and modifying array elements
+│   ├── 86_Arrays_Adding_Removing.js    - push / pop / shift / unshift basics
+│   ├── 87_Adding_Removing2.js          - Adding and removing elements continued
+│   ├── 88_Real_Examples.js             - Real-world array examples (browser list)
+│   ├── 89_Searching.js                 - indexOf, find, includes — searching arrays
+│   ├── 90_Iterate.js                   - Iterating arrays with for loop and forEach
+│   ├── 91_Transform.js                 - map, filter, reduce transforms
+│   ├── 92_Arrays.js                    - Sorting arrays
+│   ├── 93_Array_Slicing.js             - slice vs splice
+│   ├── 94_Concat_Array.js              - Concatenating arrays
+│   └── 95_Array_Checking.js            - Array.isArray, every, some
+│
+└── chapter_12_Functions/
+    ├── 97_Type1_Basic_Fn.js            - Basic function declarations
+    └── 110_Spread_IQ.js                - Spread operator IQ questions
 ```
 
 ## Topics Covered
@@ -179,6 +198,22 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Advanced for-loop patterns (arrays preview)
 - Loop-based interview questions and exercises
 
+### Chapter 11 — Arrays
+- Array creation: literal syntax, empty arrays
+- Accessing and modifying elements by index
+- Adding/removing: `push`, `pop`, `shift`, `unshift`
+- Searching: `indexOf`, `find`, `includes`
+- Iterating: `for` loop, `forEach`
+- Transforming: `map`, `filter`, `reduce`
+- Sorting arrays
+- `slice` vs `splice`
+- Concatenating arrays with `concat` and spread
+- Checking: `Array.isArray`, `every`, `some`
+
+### Chapter 12 — Functions
+- Basic function declarations
+- Spread operator IQ questions
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -208,6 +243,14 @@ node chapter_08_Switch_Statement/62_REAL_TIME_EXAMPLE.js
 # Chapter 10
 node chapter_10_Loops/76_While.js
 node chapter_10_Loops/77_Do_While.js
+
+# Chapter 11
+node chapter_11_Arrays/88_Real_Examples.js
+node chapter_11_Arrays/91_Transform.js
+node chapter_11_Arrays/95_Array_Checking.js
+
+# Chapter 12
+node chapter_12_Functions/97_Type1_Basic_Fn.js
 ```
 
 ## Author
