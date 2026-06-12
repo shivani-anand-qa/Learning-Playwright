@@ -124,7 +124,11 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │   └── 95_Array_Checking.js            - Array.isArray, every, some
 │
 └── chapter_12_Functions/
-    ├── 97_Type1_Basic_Fn.js            - Basic function declarations
+    ├── 96_Functions.js                 - Function basics: define and call
+    ├── 97_Type1_Basic_Fn.js            - Type 1: no parameter, no return
+    ├── 98_Type2_Fn_With_Param_No_Return.js  - Type 2: with parameter, no return
+    ├── 99_Type3_Fn_without_Param_Return_Type.js - Type 3: no parameter, with return
+    ├── 100_Type4_Fn_With_Param_With_Return.js   - Type 4: with parameter, with return
     └── 110_Spread_IQ.js                - Spread operator IQ questions
 ```
 
@@ -211,7 +215,12 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Checking: `Array.isArray`, `every`, `some`
 
 ### Chapter 12 — Functions
-- Basic function declarations
+- Function structure: define (declare) vs call (invoke)
+- Type 1: no parameter, no return value
+- Type 2: with parameter, no return value
+- Type 3: no parameter, with return value
+- Type 4: with parameter, with return value
+- Parameters vs arguments distinction
 - Spread operator IQ questions
 
 ## Prerequisites
@@ -250,7 +259,11 @@ node chapter_11_Arrays/91_Transform.js
 node chapter_11_Arrays/95_Array_Checking.js
 
 # Chapter 12
+node chapter_12_Functions/96_Functions.js
 node chapter_12_Functions/97_Type1_Basic_Fn.js
+node chapter_12_Functions/98_Type2_Fn_With_Param_No_Return.js
+node chapter_12_Functions/99_Type3_Fn_without_Param_Return_Type.js
+node chapter_12_Functions/100_Type4_Fn_With_Param_With_Return.js
 ```
 
 ## Author
