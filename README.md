@@ -129,7 +129,22 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
     ├── 98_Type2_Fn_With_Param_No_Return.js  - Type 2: with parameter, no return
     ├── 99_Type3_Fn_without_Param_Return_Type.js - Type 3: no parameter, with return
     ├── 100_Type4_Fn_With_Param_With_Return.js   - Type 4: with parameter, with return
-    └── 110_Spread_IQ.js                - Spread operator IQ questions
+    ├── 101_Template_literal.js         - Template literals inside functions
+    ├── 103_Arrow_Fn.js                 - Arrow functions (ES6): converting regular functions to arrow syntax
+    ├── 104_Arrow_Fn_REAL.js            - Real-world arrow function example: HTTP status code validator
+    ├── 105_IIFE.js                     - IIFE (Immediately Invoked Function Expressions)
+    ├── 106_Default_Param_Fn.js         - Default parameters in functions
+    ├── 107_IQ.js                       - IQ: return values, function expressions vs declarations
+    ├── 108_Rest_Param_Fn.js            - Rest parameters (...params)
+    ├── 109_IQ.js                       - IQ: spread vs rest, error checking with spread
+    ├── 110_Spread_IQ.js                - Spread operator IQ questions
+    ├── 111_Scope._Fn.js                - Scope in functions: global vs local scope
+    ├── 112_IQ.js                       - IQ: nested scope and block scope (ReferenceError demo)
+    ├── 113_Closure.js                  - Closures: makeCounter and basic closure pattern
+    ├── 114_Closure.js                  - Closures continued: counter object with increment/decrement/get
+    ├── 115_API_REAL_Closure.js         - Real-world closure: retry tracker for test automation
+    ├── 116_Higher_Order_Fn.js          - Higher-order functions (functions as arguments)
+    └── 117_Pure_Fn.js                  - Pure vs impure functions
 ```
 
 ## Topics Covered
@@ -221,7 +236,20 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Type 3: no parameter, with return value
 - Type 4: with parameter, with return value
 - Parameters vs arguments distinction
-- Spread operator IQ questions
+- Template literals inside functions
+- Arrow functions (ES6): concise syntax, implicit return, single-param shorthand
+- Real-world arrow function: HTTP status code validator (normal → expression → arrow)
+- IIFE (Immediately Invoked Function Expressions): self-executing functions
+- Default parameters: fallback values when arguments are omitted
+- Rest parameters (`...params`): collect variable arguments into an array
+- Spread operator (`...`): spread array elements as individual arguments
+- Scope in functions: global scope vs local (function) scope
+- Nested scope and block scope: inner functions can't be accessed from outer scope
+- Closures: inner function retaining access to outer function's variables ("backpack")
+- Closures in practice: counter with `increment`, `decrement`, `get`
+- Real-world closure: retry tracker for test automation
+- Higher-order functions: passing functions as arguments
+- Pure functions vs impure functions: predictability and side effects
 
 ## Prerequisites
 
@@ -264,6 +292,17 @@ node chapter_12_Functions/97_Type1_Basic_Fn.js
 node chapter_12_Functions/98_Type2_Fn_With_Param_No_Return.js
 node chapter_12_Functions/99_Type3_Fn_without_Param_Return_Type.js
 node chapter_12_Functions/100_Type4_Fn_With_Param_With_Return.js
+node chapter_12_Functions/103_Arrow_Fn.js
+node chapter_12_Functions/104_Arrow_Fn_REAL.js
+node chapter_12_Functions/105_IIFE.js
+node chapter_12_Functions/106_Default_Param_Fn.js
+node chapter_12_Functions/108_Rest_Param_Fn.js
+node chapter_12_Functions/111_Scope._Fn.js
+node chapter_12_Functions/113_Closure.js
+node chapter_12_Functions/114_Closure.js
+node chapter_12_Functions/115_API_REAL_Closure.js
+node chapter_12_Functions/116_Higher_Order_Fn.js
+node chapter_12_Functions/117_Pure_Fn.js
 ```
 
 ## Author
