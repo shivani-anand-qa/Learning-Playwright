@@ -39,19 +39,32 @@ for (let i = 0; i < cleanstr.length / 2; i++) {
 console.log(`String "${str}" is ${isPalindrome ? "" : "not "}a palindrome`);
 
 //2. Anagram
-let word1 = "tea";
+let word1 = "teaa";
 let word2 = "eat";
 let isAnagram = false;
 
 
 if (word1.length === word2.length) {
+    const char1 = [...word1];
+    const char2 = [...word2];
 
+    if (char1.sort().join("") === char2.sort().join("")) { //Arrays are objects, cant be compared directly
+        //we have to use join after sort()
+        isAnagram = true;
+    }
+
+    else {
+        isAnagram = false;
+    }
+
+    /*
     if (word1.split("").sort().join("") === word2.split("").sort().join("")) {
         isAnagram = true;
     }
     else {
         isAnagram = false;
     }
+        */
 }
 if (isAnagram) {
     console.log("Words are anagram")

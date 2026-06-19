@@ -155,21 +155,30 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │   ├── 123_SC.js                       - Type conversion: toString, Number, parseInt, parseFloat
 │   └── June 3 task.js                  - Practice tasks: palindrome checker and anagram detector
 │
-└── chapter_14_Objects/
-    ├── 124_Objects.js                  - Object introduction: creating objects with key-value pairs
-    ├── 125_Objects2.js                 - Objects with multiple properties
-    ├── 126_Objects_Creation.js         - Object creation and reference equality (=== on objects)
-    ├── 127_Objects_REAL.js             - Real-world object usage: building a config object dynamically
-    ├── 128_Primitive_Ref.js            - Primitive vs reference types (call by value vs call by reference)
-    ├── 129_Ob_Examples.js              - JSON vs object distinction
-    ├── 130_IQ.js                       - IQ: dot notation and bracket notation access
-    ├── 131_Object_Fn.js                - Methods inside objects (object functions)
-    ├── 132_Obj_Decon.js                - Object destructuring and variable renaming
-    ├── 133_Spread.js                   - Spread operator with objects: copy and merge
-    ├── 134_Objects_GET_SET_Methods.js  - Getter and setter methods in objects
-    ├── 135_IQ.js                       - Object.keys, Object.values, Object.entries, for...in loop
-    ├── 136_Obj_REAL.js                 - Real-world objects in test automation (config, expected response)
-    └── 137_Let_const_obj.js            - let vs const with objects: mutating properties vs reassignment
+├── chapter_14_Objects/
+│   ├── 124_Objects.js                  - Object introduction: creating objects with key-value pairs
+│   ├── 125_Objects2.js                 - Objects with multiple properties
+│   ├── 126_Objects_Creation.js         - Object creation and reference equality (=== on objects)
+│   ├── 127_Objects_REAL.js             - Real-world object usage: building a config object dynamically
+│   ├── 128_Primitive_Ref.js            - Primitive vs reference types (call by value vs call by reference)
+│   ├── 129_Ob_Examples.js              - JSON vs object distinction
+│   ├── 130_IQ.js                       - IQ: dot notation and bracket notation access
+│   ├── 131_Object_Fn.js                - Methods inside objects (object functions)
+│   ├── 132_Obj_Decon.js                - Object destructuring and variable renaming
+│   ├── 133_Spread.js                   - Spread operator with objects: copy and merge
+│   ├── 134_Objects_GET_SET_Methods.js  - Getter and setter methods in objects
+│   ├── 135_IQ.js                       - Object.keys, Object.values, Object.entries, for...in loop
+│   ├── 136_Obj_REAL.js                 - Real-world objects in test automation (config, expected response)
+│   └── 137_Let_const_obj.js            - let vs const with objects: mutating properties vs reassignment
+│
+└── chapter_15_2D_Array/
+    ├── 138_2D_Array.js                 - 2D array introduction: grid creation and nested for loops
+    ├── 139_2d.js                       - 2D arrays: rows, columns, grid indexing and length
+    ├── 140_REAL.js                     - Real-world 2D array: test matrix with for-of, forEach
+    ├── 141_2d_Array_Fn.js              - 2D array with map/reduce: row sums and filtering failed tests
+    ├── 142_IQ_Right_Pattern_Py.js      - Pattern printing: right triangle and pyramid with nested loops
+    ├── Task.js                         - Practice tasks: reverse triangle and pyramid patterns
+    └── testdata.csv                    - Sample CSV test data
 ```
 
 ## Topics Covered
@@ -301,6 +310,16 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Real-world objects in test automation: config objects, expected-response objects
 - `let` vs `const` with objects: properties can always be mutated; `const` only prevents reassignment
 
+### Chapter 15 — 2D Arrays
+- 2D array (matrix) creation: array of arrays
+- Indexing with `grid[row][col]`
+- `grid.length` (rows) vs `grid[0].length` (columns)
+- Iterating with nested `for` loops, `for...of`, and `forEach`
+- Real-world test matrix: storing test name, result, and status code in a 2D array
+- `map` + `reduce` on 2D arrays: computing row sums
+- Filtering failed tests across a 2D suite results matrix
+- Pattern printing with nested loops: right triangle, reverse triangle, pyramid
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -365,6 +384,17 @@ node "chapter_13_Strings.js/June 3 task.js"
 
 # Chapter 14
 node chapter_14_Objects/124_Objects.js
+node chapter_14_Objects/125_Objects2.js
+node chapter_14_Objects/136_Obj_REAL.js
+node chapter_14_Objects/137_Let_const_obj.js
+
+# Chapter 15
+node chapter_15_2D_Array/138_2D_Array.js
+node chapter_15_2D_Array/139_2d.js
+node chapter_15_2D_Array/140_REAL.js
+node chapter_15_2D_Array/141_2d_Array_Fn.js
+node chapter_15_2D_Array/142_IQ_Right_Pattern_Py.js
+node chapter_15_2D_Array/Task.js
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
