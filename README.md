@@ -1,6 +1,6 @@
-# LearnPlaywrightBatch2x
+# Learning-Playwright
 
-A structured learning repository covering JavaScript fundamentals, TypeScript, and Playwright test automation — built as part of The Testing Academy Batch 2x curriculum.
+A structured learning repository covering JavaScript fundamentals, TypeScript, and Playwright test automation.
 
 ## Repository Structure
 
@@ -509,4 +509,4 @@ node chapter_14_Objects/137_Let_const_obj.js
 
 ## Author
 
-**Shivani Anand** — QA Engineer learning Playwright automation
+**Shivani Anand** — QA Engineer learning Playwright test automation
