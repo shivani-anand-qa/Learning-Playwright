@@ -180,18 +180,27 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │   ├── June 8 Task.js                  - Practice tasks: reverse triangle and pyramid patterns
 │   └── testdata.csv                    - Sample CSV test data
 │
-└── chapter_16_Callback/
-    ├── 143_Callback.js                 - Callback introduction: passing a function as an argument
-    ├── 144_CB.js                       - Callback concept: DNR demo (function not yet created)
-    ├── 145_CB_Fn.js                    - Callback analogy: café table-ready scenario
-    ├── 146_PW_CB.js                    - Playwright-style callback: test(name, callback) pattern
-    ├── 147_JS_CB.js                    - JavaScript async callback: non-blocking execution order
-    ├── 148_Sync_CB.js                  - Synchronous callbacks: forEach over test results array
-    ├── 149_Async_CB.js                 - Asynchronous callbacks: setTimeout and execution order
-    ├── 150_CB_Hell.js                  - Callback hell: 4-step nested login flow (app.vwo.com)
-    ├── 151_CB_Hell.js                  - Callback hell: 27-step nested E2E purchase flow (app.shop.com)
-    ├── 152_CB_Parameter.js             - Callbacks with parameters: passing data into callback functions
-    └── 153_CB_Return.js                - Callbacks with return values: using callback result in caller
+├── chapter_16_Callback/
+│   ├── 143_Callback.js                 - Callback introduction: passing a function as an argument
+│   ├── 144_CB.js                       - Callback concept: DNR demo (function not yet created)
+│   ├── 145_CB_Fn.js                    - Callback analogy: café table-ready scenario
+│   ├── 146_PW_CB.js                    - Playwright-style callback: test(name, callback) pattern
+│   ├── 147_JS_CB.js                    - JavaScript async callback: non-blocking execution order
+│   ├── 148_Sync_CB.js                  - Synchronous callbacks: forEach over test results array
+│   ├── 149_Async_CB.js                 - Asynchronous callbacks: setTimeout and execution order
+│   ├── 150_CB_Hell.js                  - Callback hell: 4-step nested login flow (app.vwo.com)
+│   ├── 151_CB_Hell.js                  - Callback hell: 27-step nested E2E purchase flow (app.shop.com)
+│   ├── 152_CB_Parameter.js             - Callbacks with parameters: passing data into callback functions
+│   └── 153_CB_Return.js                - Callbacks with return values: using callback result in caller
+│
+└── chapter_17_Promise/
+    ├── 154_Promise.js                  - Promise introduction: resolve and reject with food delivery analogy
+    ├── 155_Promise_REAL_API.js         - Real API call simulation: Promise resolving with status 200 and body
+    ├── 156_Promise_REAL_API_PART2.js   - Promise rejection: handling errors with .catch and chaining .then
+    ├── 157_Finally.js                  - .finally() block: cleanup code that runs after resolve or reject
+    ├── 158_Call_Py_Problem.js          - Callback pyramid refactored with Promises: multi-step browser flow
+    ├── 159_Promise_ALL.js              - Promise.all: running multiple checks in parallel and awaiting all
+    └── 160_Promise_IQ.js               - Promise IQ questions: chaining, execution order, async behaviour
 ```
 
 ## Topics Covered
@@ -346,6 +355,16 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Real QA scenario (4 steps): login flow demonstrating callback pyramid (app.vwo.com)
 - Real QA scenario (27 steps): full E2E purchase flow showing extreme callback nesting (app.shop.com)
 
+### Chapter 17 — Promises
+- Promise introduction: the two outcomes — `resolve` (success) and `reject` (failure)
+- `.then()` for handling resolved values, `.catch()` for handling rejections
+- Chaining `.then()` calls to process data step by step
+- `.finally()` block: cleanup code that always runs regardless of outcome
+- Real API simulation: Promise resolving with `{ status: 200, body }` and rejecting with error codes
+- Refactoring callback hell into a cleaner Promise chain (multi-step browser automation flow)
+- `Promise.all`: run multiple independent checks in parallel and wait for all to complete
+- Promise IQ: execution order, chaining behaviour, and async gotchas
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -434,6 +453,16 @@ node chapter_16_Callback/150_CB_Hell.js
 node chapter_16_Callback/151_CB_Hell.js
 node chapter_16_Callback/152_CB_Parameter.js
 node chapter_16_Callback/153_CB_Return.js
+
+# Chapter 17
+node chapter_17_Promise/154_Promise.js
+node chapter_17_Promise/155_Promise_REAL_API.js
+node chapter_17_Promise/156_Promise_REAL_API_PART2.js
+node chapter_17_Promise/157_Finally.js
+node chapter_17_Promise/158_Call_Py_Problem.js
+node chapter_17_Promise/159_Promise_ALL.js
+node chapter_17_Promise/160_Promise_IQ.js
+
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
