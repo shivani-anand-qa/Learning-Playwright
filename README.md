@@ -202,15 +202,22 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │   ├── 159_Promise_ALL.js              - Promise.all: running multiple checks in parallel and awaiting all
 │   └── 160_Promise_IQ.js               - Promise IQ questions: chaining, execution order, async behaviour
 │
-└── chapter_18_Async_Await/
-    ├── 161_Async.js                    - async/await with try/catch: handling rejected Promises
-    ├── 162_Async.js                    - await with chained async calls: token fetch and API usage
-    ├── 163_PyODom.js                   - Refactoring callback hell into async/await: multi-step browser flow
-    ├── 164_Async_Ex.js                 - Basic async/await: returning values and awaiting results
-    ├── 165_AA_Parallel.js              - Parallel async execution: running independent tasks concurrently
-    ├── 165_AA_Seq.js                   - Sequential async execution: awaiting dependent steps in order
-    ├── 166_IQ.js                       - Async/await IQ: identifying async vs normal functions and parallel vs sequential
-    └── 167_ACLogin.js                  - Real Playwright test: async login flow with page interactions and assertions
+├── chapter_18_Async_Await/
+│   ├── 161_Async.js                    - async/await with try/catch: handling rejected Promises
+│   ├── 162_Async.js                    - await with chained async calls: token fetch and API usage
+│   ├── 163_PyODom.js                   - Refactoring callback hell into async/await: multi-step browser flow
+│   ├── 164_Async_Ex.js                 - Basic async/await: returning values and awaiting results
+│   ├── 165_AA_Parallel.js              - Parallel async execution: running independent tasks concurrently
+│   ├── 165_AA_Seq.js                   - Sequential async execution: awaiting dependent steps in order
+│   ├── 166_IQ.js                       - Async/await IQ: identifying async vs normal functions and parallel vs sequential
+│   └── 167_ACLogin.js                  - Real Playwright test: async login flow with page interactions and assertions
+│
+└── chapter_19_Playwright_Basics/
+    ├── playwright.config.ts            - Playwright config: HTML reporter, 30s timeout, retries, multi-browser projects
+    ├── package.json                    - Project dependencies (@playwright/test, TypeScript)
+    └── tests/
+        ├── example.spec.ts             - First test: navigate to TTA Cart and verify page title
+        └── codegen-tta-cart.spec.ts    - Codegen test: invalid login error, valid login, product page, logout flow
 ```
 
 ## Topics Covered
@@ -385,6 +392,18 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - IQ questions: distinguishing async vs normal functions and sequential vs parallel patterns
 - Real Playwright test: end-to-end login flow using `async ({ page }) => {}` with `await` actions and `expect` assertions
 
+### Chapter 19 — Playwright Basics
+- Setting up a Playwright project: `package.json`, `playwright.config.ts`, TypeScript support
+- `playwright.config.ts` options: `testDir`, `reporter`, `timeout`, `retries`, `baseURL`, `projects`
+- Multi-browser testing with `projects`: running the same tests in Chromium, Firefox, and Safari
+- HTML reporter: generating and viewing test reports with `npx playwright show-report`
+- Writing your first test: `page.goto`, `page.waitForTimeout`, `expect(page).toHaveTitle`
+- Using Playwright Codegen to record tests automatically
+- Locators: `page.locator('[data-test="..."]')` for selecting elements by test ID
+- Actions: `.click()`, `.fill()` for interacting with form elements
+- Assertions: `expect(locator).toContainText(...)` for verifying page content
+- Real test scenario: invalid login error message, valid login, product page verification, logout
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -492,6 +511,14 @@ node chapter_18_Async_Await/165_AA_Parallel.js
 node chapter_18_Async_Await/165_AA_Seq.js
 node chapter_18_Async_Await/166_IQ.js
 
+# Chapter 19 — run from inside the chapter directory
+cd chapter_19_Playwright_Basics
+npx playwright test                        # run all tests (all browsers)
+npx playwright test tests/example.spec.ts  # run a single test file
+npx playwright test --headed               # run with browser visible
+npx playwright show-report                 # open the HTML report
+
+cd ..
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
