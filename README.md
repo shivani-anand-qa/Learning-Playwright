@@ -212,12 +212,22 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │   ├── 166_IQ.js                       - Async/await IQ: identifying async vs normal functions and parallel vs sequential
 │   └── 167_ACLogin.js                  - Real Playwright test: async login flow with page interactions and assertions
 │
-└── chapter_19_Playwright_Basics/
-    ├── playwright.config.ts            - Playwright config: HTML reporter, 30s timeout, retries, multi-browser projects
-    ├── package.json                    - Project dependencies (@playwright/test, TypeScript)
-    └── tests/
-        ├── example.spec.ts             - First test: navigate to TTA Cart and verify page title
-        └── codegen-tta-cart.spec.ts    - Codegen test: invalid login error, valid login, product page, logout flow
+├── chapter_19_Playwright_Basics/
+│   ├── playwright.config.ts            - Playwright config: HTML reporter, 30s timeout, retries, multi-browser projects
+│   ├── package.json                    - Project dependencies (@playwright/test, TypeScript)
+│   └── tests/
+│       ├── example.spec.ts             - First test: navigate to TTA Cart and verify page title
+│       └── codegen-tta-cart.spec.ts    - Codegen test: invalid login error, valid login, product page, logout flow
+│
+└── chapter_20_Export_Import/
+    ├── ExplainDefaultVsNamed.md        - Reference: named vs default exports comparison table
+    └── 01_EXPORT_IMPORT/
+        ├── testutils.js                - Named exports: BASE_URL constant and formatUpperCaseString function
+        ├── utils.js                    - Named export: BASE_URL constant (separate module)
+        ├── logger.js                   - Default export: log function; named export: log2 function
+        ├── 168_EXPORT_IMPORT.js        - Importing named exports with alias (as) from testutils.js
+        ├── 169_Utils.js                - Importing named exports from two separate modules
+        └── 170_Logger.js               - Importing a default export from logger.js
 ```
 
 ## Topics Covered
@@ -404,6 +414,18 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Assertions: `expect(locator).toContainText(...)` for verifying page content
 - Real test scenario: invalid login error message, valid login, product page verification, logout
 
+### Chapter 20 — Export / Import (ES Modules)
+- ES module system: `export` and `import` keywords for sharing code across files
+- Named exports: exporting multiple values (`export let`, `export function`) from a single file
+- Importing named exports with curly braces `{ name }` and the exact identifier
+- Renaming on import with `as`: `import { BASE_URL as bul_util }` to avoid name collisions
+- Importing from multiple modules in a single file
+- Default export: `export default` — only one allowed per file, used for the primary export
+- Importing a default export without curly braces; any local name can be used
+- Mixing default and named exports in one file (`logger.js`: `log` default + `log2` named)
+- Importing both at once: `import log, { log2 } from './logger.js'`
+- Practical utility modules: `testutils.js` (URL + formatter), `utils.js` (URL), `logger.js` (loggers)
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -519,6 +541,11 @@ npx playwright test --headed               # run with browser visible
 npx playwright show-report                 # open the HTML report
 
 cd ..
+
+# Chapter 20 — run from inside the subfolder (ES modules require --input-type or package.json type:module)
+node chapter_20_Export_Import/01_EXPORT_IMPORT/168_EXPORT_IMPORT.js
+node chapter_20_Export_Import/01_EXPORT_IMPORT/169_Utils.js
+node chapter_20_Export_Import/01_EXPORT_IMPORT/170_Logger.js
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
