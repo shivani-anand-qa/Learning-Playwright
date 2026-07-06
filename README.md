@@ -221,13 +221,25 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │
 └── chapter_20_Export_Import/
     ├── ExplainDefaultVsNamed.md        - Reference: named vs default exports comparison table
-    └── 01_EXPORT_IMPORT/
-        ├── testutils.js                - Named exports: BASE_URL constant and formatUpperCaseString function
-        ├── utils.js                    - Named export: BASE_URL constant (separate module)
-        ├── logger.js                   - Default export: log function; named export: log2 function
-        ├── 168_EXPORT_IMPORT.js        - Importing named exports with alias (as) from testutils.js
-        ├── 169_Utils.js                - Importing named exports from two separate modules
-        └── 170_Logger.js               - Importing a default export from logger.js
+    ├── 01_EXPORT_IMPORT/
+    │   ├── testutils.js                - Named exports: BASE_URL constant and formatUpperCaseString function
+    │   ├── utils.js                    - Named export: BASE_URL constant (separate module)
+    │   ├── logger.js                   - Default export: log function; named export: log2 function
+    │   ├── 168_EXPORT_IMPORT.js        - Importing named exports with alias (as) from testutils.js
+    │   ├── 169_Utils.js                - Importing named exports from two separate modules
+    │   └── 170_Logger.js               - Importing a default export from logger.js
+    └── 02_CLASS_OBJECT/
+        ├── 171_Class_Object.js         - Class introduction: constructor, instance properties, methods
+        ├── 172_Class_Object2.js        - Class continued: multiple instances and property access
+        ├── 173_Car.js                  - Car class: real-world example with constructor and methods
+        ├── 174_REAL_Browser.js         - Browser class: real-world Playwright-style class usage
+        ├── 175_IQ.js                   - Class IQ questions
+        ├── 176_Private_Public.js       - Private (#) vs public class fields
+        ├── 177_Static.js               - Static properties and methods: class-level vs instance-level
+        ├── 178_Static.js               - Static methods continued
+        ├── Jun22_Task1_Calc.js         - Task: Calculator class with static properties and instance methods
+        ├── Jun22_Task2_StaticVsNS.js   - Task: static vs non-static methods on a Student class
+        └── Jun22_Task2.js              - Task: PlaywrightBatch class combining static and non-static methods; 10 student objects
 ```
 
 ## Topics Covered
@@ -426,6 +438,17 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Importing both at once: `import log, { log2 } from './logger.js'`
 - Practical utility modules: `testutils.js` (URL + formatter), `utils.js` (URL), `logger.js` (loggers)
 
+### Chapter 20 — Classes & Objects
+- `class` syntax: `constructor`, instance properties, and instance methods
+- Creating multiple objects (instances) from a single class with `new`
+- Static properties (`static`): belong to the class, not instances — accessed via `ClassName.property`
+- Static methods: called on the class (`ClassName.method()`), no access to instance `this`
+- Non-static (instance) methods: called on objects (`obj.method()`), access instance data via `this`
+- Why static methods require explicit parameters for instance data (no implicit `this`)
+- Private fields (`#field`): encapsulation — only accessible inside the class
+- Real-world class: `PlaywrightBatch` combining static course info with per-student instance data
+- Practice tasks: Calculator class, Student enrollment class, batch printer with 10 student objects
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -542,10 +565,17 @@ npx playwright show-report                 # open the HTML report
 
 cd ..
 
-# Chapter 20 — run from inside the subfolder (ES modules require --input-type or package.json type:module)
+# Chapter 20 — Export/Import
 node chapter_20_Export_Import/01_EXPORT_IMPORT/168_EXPORT_IMPORT.js
 node chapter_20_Export_Import/01_EXPORT_IMPORT/169_Utils.js
 node chapter_20_Export_Import/01_EXPORT_IMPORT/170_Logger.js
+
+# Chapter 20 — Classes & Objects
+node chapter_20_Export_Import/02_CLASS_OBJECT/171_Class_Object.js
+node chapter_20_Export_Import/02_CLASS_OBJECT/177_Static.js
+node chapter_20_Export_Import/02_CLASS_OBJECT/Jun22_Task1_Calc.js
+node chapter_20_Export_Import/02_CLASS_OBJECT/Jun22_Task2_StaticVsNS.js
+node chapter_20_Export_Import/02_CLASS_OBJECT/Jun22_Task2.js
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
