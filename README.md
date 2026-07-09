@@ -229,19 +229,47 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │       ├── 169_Utils.js                - Importing named exports from two separate modules
 │       └── 170_Logger.js               - Importing a default export from logger.js
 │
-└── chapter_21_Classes_and_Objects/
-    └── 02_CLASS_OBJECT/
-        ├── 171_Class_Object.js         - Class introduction: constructor, instance properties, methods
-        ├── 172_Class_Object2.js        - Class continued: multiple instances and property access
-        ├── 173_Car.js                  - Car class: real-world example with constructor and methods
-        ├── 174_REAL_Browser.js         - Browser class: real-world Playwright-style class usage
-        ├── 175_IQ.js                   - Class IQ questions
-        ├── 176_Private_Public.js       - Private (#) vs public class fields
-        ├── 177_Static.js               - Static properties and methods: class-level vs instance-level
-        ├── 178_Static.js               - Static methods continued
-        ├── Jun22_Task1_Calc.js         - Task: Calculator class with static properties and instance methods
-        ├── Jun22_Task2_StaticVsNS.js   - Task: static vs non-static methods on a Student class
-        └── Jun22_Task2.js              - Task: PlaywrightBatch class combining static and non-static methods; 10 student objects
+├── chapter_21_Classes_and_Objects/
+│   └── 02_CLASS_OBJECT/
+│       ├── 171_Class_Object.js         - Class introduction: constructor, instance properties, methods
+│       ├── 172_Class_Object2.js        - Class continued: multiple instances and property access
+│       ├── 173_Car.js                  - Car class: real-world example with constructor and methods
+│       ├── 174_REAL_Browser.js         - Browser class: real-world Playwright-style class usage
+│       ├── 175_IQ.js                   - Class IQ questions
+│       ├── 176_Private_Public.js       - Private (#) vs public class fields
+│       ├── 177_Static.js               - Static properties and methods: class-level vs instance-level
+│       ├── 178_Static.js               - Static methods continued
+│       ├── Jun22_Task1_Calc.js         - Task: Calculator class with static properties and instance methods
+│       ├── Jun22_Task2_StaticVsNS.js   - Task: static vs non-static methods on a Student class
+│       └── Jun22_Task2.js              - Task: PlaywrightBatch class combining static and non-static methods; 10 student objects
+│
+├── chapter_22_Encapsulation/
+│   └── 03_ENCAPSULATION/
+│       ├── 179_Encap.js                - Encapsulation intro: BankAccount with private #balance, controlled access via deposit/getBalance
+│       ├── 180_REAL_EXAMPLE.js         - Encapsulation real example: Person class hiding private child fields
+│       ├── 181_Encap_Car.js            - Encapsulation: Car class with private #engine and public interface
+│       └── 182_Encap_Bank.js           - Encapsulation: CIBC bank class with private #balance and public deposit/withdraw methods
+│
+├── chapter_23_Inheritance/
+│   ├── 183_Single_Inheritance.js       - Single inheritance: BasePage → child page using extends
+│   ├── 184_SI_Example.js               - Single inheritance example: Animal base class with eat/speak methods
+│   ├── 185_Single_Inheritence_Contrv.js - Method overriding in child: APITest overrides BaseTest.setup()
+│   ├── 186_IQ.js                       - IQ: UITest extends BaseTest, overriding setup while inheriting teardown
+│   ├── 187_IQ2.js                      - IQ: TestCase → UnitTest chain, overriding execute method
+│   ├── 188_REAL_POM.js                 - Real POM pattern: BasePage → LoginPage → ProductPage with verify overrides
+│   ├── 189_Multiple_Inheritance.js     - Multiple inheritance: JS workaround using mixins (no native multiple extends)
+│   ├── 190_Multiple_Level_Inheritance.js - Multi-level inheritance: BasePage → AuthPage → AdminPage chain
+│   └── 191_Hierarchical_Inheritance.js - Hierarchical inheritance: one Father class → multiple Son subclasses
+│
+├── chapter_24_Polymorphism/
+│   └── 192_Method_Overriding.js        - Polymorphism via method overriding: BaseTest → APIPage/UIPage with different setup()
+│
+└── chapter_25_OOPS_Interview_Questions/
+    ├── EX1.js                          - Bug class: constructor with title/severity, display method
+    ├── EX2.js                          - Environment class: default parameter values, dynamic getURL method
+    ├── EX3.js                          - User class: understanding `this` referencing the current object instance
+    ├── EX4.js                          - Counter class: method chaining by returning `this` from increment/decrement
+    └── EX5.js                          - Token class: private #value field with getter — encapsulation exercise
 ```
 
 ## Topics Covered
@@ -451,6 +479,37 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Real-world class: `PlaywrightBatch` combining static course info with per-student instance data
 - Practice tasks: Calculator class, Student enrollment class, batch printer with 10 student objects
 
+### Chapter 22 — Encapsulation
+- Encapsulation: bundling data and the methods that operate on it inside a class
+- Private fields (`#field`): hide internal state from outside code
+- Controlled access: exposing data only through public methods (`deposit`, `getBalance`, `withdraw`)
+- Real-world examples: BankAccount, Person, Car, and CIBC bank classes
+- Why encapsulation matters: prevents accidental mutation, enforces validation at the boundary
+
+### Chapter 23 — Inheritance
+- Single inheritance: child class inherits properties and methods from a parent via `extends`
+- `super()`: calling the parent constructor from the child class
+- Method overriding: child class redefines a parent method with its own implementation
+- Inheriting without overriding: child class reuses parent methods directly
+- IQ patterns: which `setup`/`teardown` runs when both parent and child define it
+- Multi-level inheritance: chaining three or more classes (BasePage → AuthPage → AdminPage)
+- Hierarchical inheritance: multiple child classes extending the same parent
+- Multiple inheritance workaround: JS doesn't support `extends` on two classes — use mixins instead
+- Real POM pattern: `BasePage → LoginPage → ProductPage` overriding `verify()` at each level
+
+### Chapter 24 — Polymorphism
+- Polymorphism: same method name, different behaviour depending on the class
+- Method overriding as the primary mechanism for polymorphism in JS
+- Runtime dispatch: the correct `setup()` / `teardown()` is called based on the actual object type
+- Real QA example: `BaseTest`, `APIPage`, and `UIPage` each with their own `setup()` implementation
+
+### Chapter 25 — OOP Interview Questions
+- EX1: Bug class — constructor with `title` and `severity`, formatted `display()` output
+- EX2: Environment class — default parameter values (`name = "staging"`, `port = 3000`), `getURL()` builder
+- EX3: `this` keyword — understanding that `this` refers to the specific instance the method is called on
+- EX4: Method chaining — returning `this` from each method so calls can be chained (`.increment().increment().getCount()`)
+- EX5: Private field encapsulation — Token class with `#value`, getter-only access, no direct mutation
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -578,6 +637,33 @@ node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/177_Static.js
 node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/Jun22_Task1_Calc.js
 node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/Jun22_Task2_StaticVsNS.js
 node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/Jun22_Task2.js
+
+# Chapter 22 — Encapsulation
+node chapter_22_Encapsulation/03_ENCAPSULATION/179_Encap.js
+node chapter_22_Encapsulation/03_ENCAPSULATION/180_REAL_EXAMPLE.js
+node chapter_22_Encapsulation/03_ENCAPSULATION/181_Encap_Car.js
+node chapter_22_Encapsulation/03_ENCAPSULATION/182_Encap_Bank.js
+
+# Chapter 23 — Inheritance
+node chapter_23_Inheritance/183_Single_Inheritance.js
+node chapter_23_Inheritance/184_SI_Example.js
+node chapter_23_Inheritance/185_Single_Inheritence_Contrv.js
+node chapter_23_Inheritance/186_IQ.js
+node chapter_23_Inheritance/187_IQ2.js
+node chapter_23_Inheritance/188_REAL_POM.js
+node chapter_23_Inheritance/189_Multiple_Inheritance.js
+node chapter_23_Inheritance/190_Multiple_Level_Inheritance.js
+node chapter_23_Inheritance/191_Hierarchical_Inheritance.js
+
+# Chapter 24 — Polymorphism
+node chapter_24_Polymorphism/192_Method_Overriding.js
+
+# Chapter 25 — OOP Interview Questions
+node chapter_25_OOPS_Interview_Questions/EX1.js
+node chapter_25_OOPS_Interview_Questions/EX2.js
+node chapter_25_OOPS_Interview_Questions/EX3.js
+node chapter_25_OOPS_Interview_Questions/EX4.js
+node chapter_25_OOPS_Interview_Questions/EX5.js
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
