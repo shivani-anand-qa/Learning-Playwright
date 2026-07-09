@@ -219,15 +219,17 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │       ├── example.spec.ts             - First test: navigate to TTA Cart and verify page title
 │       └── codegen-tta-cart.spec.ts    - Codegen test: invalid login error, valid login, product page, logout flow
 │
-└── chapter_20_Export_Import/
-    ├── ExplainDefaultVsNamed.md        - Reference: named vs default exports comparison table
-    ├── 01_EXPORT_IMPORT/
-    │   ├── testutils.js                - Named exports: BASE_URL constant and formatUpperCaseString function
-    │   ├── utils.js                    - Named export: BASE_URL constant (separate module)
-    │   ├── logger.js                   - Default export: log function; named export: log2 function
-    │   ├── 168_EXPORT_IMPORT.js        - Importing named exports with alias (as) from testutils.js
-    │   ├── 169_Utils.js                - Importing named exports from two separate modules
-    │   └── 170_Logger.js               - Importing a default export from logger.js
+├── chapter_20_Oops_Basics/
+│   └── 01_EXPORT_IMPORT/
+│       ├── ExplainDefaultVsNamed.md    - Reference: named vs default exports comparison table
+│       ├── testutils.js                - Named exports: BASE_URL constant and formatUpperCaseString function
+│       ├── utils.js                    - Named export: BASE_URL constant (separate module)
+│       ├── logger.js                   - Default export: log function; named export: log2 function
+│       ├── 168_EXPORT_IMPORT.js        - Importing named exports with alias (as) from testutils.js
+│       ├── 169_Utils.js                - Importing named exports from two separate modules
+│       └── 170_Logger.js               - Importing a default export from logger.js
+│
+└── chapter_21_Classes_and_Objects/
     └── 02_CLASS_OBJECT/
         ├── 171_Class_Object.js         - Class introduction: constructor, instance properties, methods
         ├── 172_Class_Object2.js        - Class continued: multiple instances and property access
@@ -438,7 +440,7 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Importing both at once: `import log, { log2 } from './logger.js'`
 - Practical utility modules: `testutils.js` (URL + formatter), `utils.js` (URL), `logger.js` (loggers)
 
-### Chapter 20 — Classes & Objects
+### Chapter 21 — Classes & Objects
 - `class` syntax: `constructor`, instance properties, and instance methods
 - Creating multiple objects (instances) from a single class with `new`
 - Static properties (`static`): belong to the class, not instances — accessed via `ClassName.property`
@@ -566,16 +568,16 @@ npx playwright show-report                 # open the HTML report
 cd ..
 
 # Chapter 20 — Export/Import
-node chapter_20_Export_Import/01_EXPORT_IMPORT/168_EXPORT_IMPORT.js
-node chapter_20_Export_Import/01_EXPORT_IMPORT/169_Utils.js
-node chapter_20_Export_Import/01_EXPORT_IMPORT/170_Logger.js
+node chapter_20_Oops_Basics/01_EXPORT_IMPORT/168_EXPORT_IMPORT.js
+node chapter_20_Oops_Basics/01_EXPORT_IMPORT/169_Utils.js
+node chapter_20_Oops_Basics/01_EXPORT_IMPORT/170_Logger.js
 
-# Chapter 20 — Classes & Objects
-node chapter_20_Export_Import/02_CLASS_OBJECT/171_Class_Object.js
-node chapter_20_Export_Import/02_CLASS_OBJECT/177_Static.js
-node chapter_20_Export_Import/02_CLASS_OBJECT/Jun22_Task1_Calc.js
-node chapter_20_Export_Import/02_CLASS_OBJECT/Jun22_Task2_StaticVsNS.js
-node chapter_20_Export_Import/02_CLASS_OBJECT/Jun22_Task2.js
+# Chapter 21 — Classes & Objects
+node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/171_Class_Object.js
+node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/177_Static.js
+node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/Jun22_Task1_Calc.js
+node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/Jun22_Task2_StaticVsNS.js
+node chapter_21_Classes_and_Objects/02_CLASS_OBJECT/Jun22_Task2.js
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
