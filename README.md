@@ -264,12 +264,29 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 ├── chapter_24_Polymorphism/
 │   └── 192_Method_Overriding.js        - Polymorphism via method overriding: BaseTest → APIPage/UIPage with different setup()
 │
-└── chapter_25_OOPS_Interview_Questions/
-    ├── EX1.js                          - Bug class: constructor with title/severity, display method
-    ├── EX2.js                          - Environment class: default parameter values, dynamic getURL method
-    ├── EX3.js                          - User class: understanding `this` referencing the current object instance
-    ├── EX4.js                          - Counter class: method chaining by returning `this` from increment/decrement
-    └── EX5.js                          - Token class: private #value field with getter — encapsulation exercise
+├── chapter_25_OOPS_Interview_Questions/
+│   ├── EX1.js                          - Bug class: constructor with title/severity, display method
+│   ├── EX2.js                          - Environment class: default parameter values, dynamic getURL method
+│   ├── EX3.js                          - User class: understanding `this` referencing the current object instance
+│   ├── EX4.js                          - Counter class: method chaining by returning `this` from increment/decrement
+│   └── EX5.js                          - Token class: private #value field with getter — encapsulation exercise
+│
+├── chapter_26_Typescript/
+│   ├── 193_TS.js                       - Plain JS equivalent of the TS hello-world example (no type annotations)
+│   ├── 194_TS_Hello_World.ts           - First TypeScript file: typed variable and typed function
+│   ├── 194_TS_Hello_World.js           - Compiled JS output of 194_TS_Hello_World.ts
+│   ├── 195_TSPart1.ts                  - `void` return type function; `export {}` to scope the file as a module
+│   ├── 196_TS_Part2.ts                 - Primitive types: string, number, boolean, null, undefined, arrays, any, unknown
+│   ├── 197_TS_Part2.ts                 - `typeof` narrowing on `unknown`, function/arrow function annotations, object type annotations
+│   ├── 198_Part3.ts                    - Function annotations continued; `never` return type (throws or infinite loop)
+│   ├── 199_IQ.ts                       - Typed functions: building an endpoint URL, checking success status codes, logging steps
+│   └── 200_IQ.ts                       - Typed array filtering: extracting failed HTTP response codes
+│
+└── chapter_27_Typescript_Interface/
+    ├── 201_IF.ts                       - Interface basics: `TestCase` shape with required properties
+    ├── 202_IF_Part2.ts                 - Optional properties (`?`) on an interface: `APIResponse` with optional headers/responseTime
+    ├── 203_IF_READONLY.ts              - `readonly` interface properties: immutable `statusCode` on `APIResponse`
+    └── 204_IF_READOnly.ts              - `readonly` continued: `Point` interface and `ReadonlyArray`/`readonly number[]`
 ```
 
 ## Topics Covered
@@ -510,6 +527,27 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - EX4: Method chaining — returning `this` from each method so calls can be chained (`.increment().increment().getCount()`)
 - EX5: Private field encapsulation — Token class with `#value`, getter-only access, no direct mutation
 
+### Chapter 26 — TypeScript Basics
+- Compiling TypeScript to JavaScript (`.ts` → `.js`) and comparing with plain JS
+- Typed variables and typed function parameters/return values
+- `export {}`: scoping a file as a module to avoid global name collisions
+- Primitive types: `string`, `number`, `boolean`, `null`, `undefined`
+- Array types: `number[]` and `Array<string>` syntax
+- `any` (avoid when possible) vs `unknown` (safer alternative)
+- Narrowing `unknown` with `typeof` checks
+- Function annotations: named functions and arrow functions with typed params/return
+- Object type annotations: inline `{ name: string; age: number }` shapes
+- `void` return type vs `never` return type (throws or infinite loop)
+- IQ practice: typed endpoint builder, HTTP status code checks, filtering failed response codes
+
+### Chapter 27 — TypeScript Interfaces
+- `interface` keyword: defining a reusable shape/contract for objects
+- Required properties and the errors TypeScript raises when one is missing
+- Optional properties with `?`: making a property non-mandatory
+- `readonly` properties: preventing reassignment after object creation
+- `readonly` arrays: `readonly number[]` / `ReadonlyArray<number>` — immutable array types
+- Real-world interface examples: `TestCase`, `APIResponse`, `Point`
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -664,6 +702,21 @@ node chapter_25_OOPS_Interview_Questions/EX2.js
 node chapter_25_OOPS_Interview_Questions/EX3.js
 node chapter_25_OOPS_Interview_Questions/EX4.js
 node chapter_25_OOPS_Interview_Questions/EX5.js
+
+# Chapter 26 — TypeScript Basics
+node chapter_26_Typescript/194_TS_Hello_World.ts
+node chapter_26_Typescript/195_TSPart1.ts
+node chapter_26_Typescript/196_TS_Part2.ts
+node chapter_26_Typescript/197_TS_Part2.ts
+node chapter_26_Typescript/198_Part3.ts
+node chapter_26_Typescript/199_IQ.ts
+node chapter_26_Typescript/200_IQ.ts
+
+# Chapter 27 — TypeScript Interfaces
+node chapter_27_Typescript_Interface/201_IF.ts
+node chapter_27_Typescript_Interface/202_IF_Part2.ts
+node chapter_27_Typescript_Interface/203_IF_READONLY.ts
+node chapter_27_Typescript_Interface/204_IF_READOnly.ts
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js

@@ -1,5 +1,8 @@
 {
     "files.autoSave": "onFocusChange",
     "editor.fontSize": 15,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "code-runner.executorMap": {
+        "typescript": "node"
+    }
 }
