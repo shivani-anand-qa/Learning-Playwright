@@ -282,11 +282,33 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │   ├── 199_IQ.ts                       - Typed functions: building an endpoint URL, checking success status codes, logging steps
 │   └── 200_IQ.ts                       - Typed array filtering: extracting failed HTTP response codes
 │
-└── chapter_27_Typescript_Interface/
-    ├── 201_IF.ts                       - Interface basics: `TestCase` shape with required properties
-    ├── 202_IF_Part2.ts                 - Optional properties (`?`) on an interface: `APIResponse` with optional headers/responseTime
-    ├── 203_IF_READONLY.ts              - `readonly` interface properties: immutable `statusCode` on `APIResponse`
-    └── 204_IF_READOnly.ts              - `readonly` continued: `Point` interface and `ReadonlyArray`/`readonly number[]`
+├── chapter_27_Typescript_Interface/
+│   ├── 201_IF.ts                       - Interface basics: `TestCase` shape with required properties
+│   ├── 202_IF_Part2.ts                 - Optional properties (`?`) on an interface: `APIResponse` with optional headers/responseTime
+│   ├── 203_IF_READONLY.ts              - `readonly` interface properties: immutable `statusCode` on `APIResponse`
+│   ├── 204_IF_READOnly.ts              - `readonly` continued: `Point` interface and `ReadonlyArray`/`readonly number[]`
+│   ├── 205_Interface.ts                - Interface describing methods: `Calculator` with add/subtract/multiply signatures
+│   ├── 206_Hooks.ts                    - Callable interface: `TestHook` function-shaped interface for before/after test hooks
+│   ├── 207_Bug_Report.ts               - Interface with array property: `BugReport` with `stepsToReproduce: string[]`
+│   ├── 208_TestConfig.ts               - Optional properties in practice: `TestConfig` with required + optional (`timeout?`, `retries?`) fields for CI vs local
+│   ├── 209_REAL_EXAMPLE.ts             - Interface inheritance with `extends`: `BasePage` → `LoginPage` / `FreeTrialPage`
+│   └── 210_Class_Interface.ts          - `implements` keyword: `TestCase` class implementing the `Executable` interface contract
+│
+├── chapter_28_ENUM/
+│   ├── 212_Enum_fn.ts                  - Enum basics: numeric enums (auto-incrementing) vs string enums; `Environment` URL enum
+│   ├── 213_ENUM.ts                     - String enums with `switch`: `Browser` enum driving a `launchBrowser` function
+│   └── 214_API_.ts                     - Enums for API methods: `HTTPMethod` enum used to build request logs
+│
+├── chapter_29_Typescript_Generic/
+│   ├── 215_Genric.ts                   - Generic functions: `<T>` type parameter, `getFirstResult<T>(results: T[])`, non-null assertion (`!`)
+│   ├── 216_Genric_Class.ts             - Generic classes: `TestDataStorage<T>` reusable typed store with add/getFirst/getAll/count
+│   └── 217_Generic_API_RESPONSE.ts     - Generic return types: `wrapResponse<T>` building a typed `{ statusCode, data }` envelope
+│
+└── chapter_30_PRIVATE_PUBLIC_PROTECTED/
+    ├── 218_PPP.ts                      - Access modifiers: `public`/`private`/`protected` on `APIClient`, and how `protected` is inherited by `UserAPIClient`
+    ├── 219_PageObjectModel.ts          - Real POM example: `protected` base URL/navigate in `BasePage`, extended by `Login`
+    ├── 220_READONLY.ts                 - `readonly` class properties: immutable `PlaywrightConfig` set only via constructor
+    └── 221_Abstract_Class.ts           - Abstract classes: `abstract class BaseTest` with abstract methods implemented by `UITest`
 ```
 
 ## Topics Covered
@@ -547,6 +569,35 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - `readonly` properties: preventing reassignment after object creation
 - `readonly` arrays: `readonly number[]` / `ReadonlyArray<number>` — immutable array types
 - Real-world interface examples: `TestCase`, `APIResponse`, `Point`
+- Interfaces describing method signatures: `Calculator` (add/subtract/multiply)
+- Callable (function-shaped) interfaces: `TestHook` for before/after hooks
+- Interfaces with array properties: `BugReport.stepsToReproduce: string[]`
+- Combining required and optional properties: `TestConfig` for CI vs local test runs
+- Interface inheritance with `extends`: `BasePage` → `LoginPage` / `FreeTrialPage`
+- `implements` keyword: a class fulfilling an interface contract (`TestCase implements Executable`)
+
+### Chapter 28 — Enums
+- `enum` keyword: naming a fixed set of related constants
+- Numeric enums: auto-incrementing values starting at `0`
+- String enums: explicit string values for readable output (`Environment`, `Browser`)
+- Using enums in `switch` statements for type-safe branching (`launchBrowser`)
+- Real-world enum: `HTTPMethod` enum (`GET`/`POST`/`PUT`/`DELETE`) driving request logging
+
+### Chapter 29 — TypeScript Generics
+- Why generics exist: reusable functions/classes that work with any type while keeping type safety
+- Generic functions: `<T>` type parameter syntax, e.g. `getFirstResult<T>(results: T[])`
+- Explicit type arguments (`fn<string>(...)`) vs relying on type inference
+- Non-null assertion operator (`!`): compile-time-only assertion that a value isn't `null`/`undefined`
+- Generic classes: `TestDataStorage<T>` — a reusable typed store (add/getFirst/getAll/count)
+- Generic return types: `wrapResponse<T>` building a typed `{ statusCode, data }` API response envelope
+
+### Chapter 30 — Access Modifiers (Private / Public / Protected) & Abstract Classes
+- `public`, `private`, and `protected` class members and their visibility rules
+- `protected` members are accessible in subclasses but not from outside the class hierarchy (`APIClient` → `UserAPIClient`)
+- Real POM example: `protected baseURL`/`navigate()` in `BasePage`, reused by `Login`
+- `readonly` class properties: settable only in the constructor, immutable afterward (`PlaywrightConfig`)
+- Abstract classes (`abstract class`): defining a contract of abstract methods that subclasses must implement
+- Abstract classes can also include concrete (non-abstract) methods alongside abstract ones
 
 ## Prerequisites
 
@@ -717,6 +768,28 @@ node chapter_27_Typescript_Interface/201_IF.ts
 node chapter_27_Typescript_Interface/202_IF_Part2.ts
 node chapter_27_Typescript_Interface/203_IF_READONLY.ts
 node chapter_27_Typescript_Interface/204_IF_READOnly.ts
+node chapter_27_Typescript_Interface/205_Interface.ts
+node chapter_27_Typescript_Interface/206_Hooks.ts
+node chapter_27_Typescript_Interface/207_Bug_Report.ts
+node chapter_27_Typescript_Interface/208_TestConfig.ts
+node chapter_27_Typescript_Interface/209_REAL_EXAMPLE.ts
+node chapter_27_Typescript_Interface/210_Class_Interface.ts
+
+# Chapter 28 — Enums
+node chapter_28_ENUM/212_Enum_fn.ts
+node chapter_28_ENUM/213_ENUM.ts
+node chapter_28_ENUM/214_API_.ts
+
+# Chapter 29 — TypeScript Generics
+node chapter_29_Typescript_Generic/215_Genric.ts
+node chapter_29_Typescript_Generic/216_Genric_Class.ts
+node chapter_29_Typescript_Generic/217_Generic_API_RESPONSE.ts
+
+# Chapter 30 — Access Modifiers & Abstract Classes
+node chapter_30_PRIVATE_PUBLIC_PROTECTED/218_PPP.ts
+node chapter_30_PRIVATE_PUBLIC_PROTECTED/219_PageObjectModel.ts
+node chapter_30_PRIVATE_PUBLIC_PROTECTED/220_READONLY.ts
+node chapter_30_PRIVATE_PUBLIC_PROTECTED/221_Abstract_Class.ts
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
