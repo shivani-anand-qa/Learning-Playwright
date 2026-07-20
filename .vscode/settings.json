@@ -3,6 +3,6 @@
     "editor.fontSize": 15,
     "editor.formatOnSave": true,
     "code-runner.executorMap": {
-        "typescript": "ts-node"
+        "typescript": "npx tsx"
     }
 }

@@ -304,11 +304,26 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 │   ├── 216_Genric_Class.ts             - Generic classes: `TestDataStorage<T>` reusable typed store with add/getFirst/getAll/count
 │   └── 217_Generic_API_RESPONSE.ts     - Generic return types: `wrapResponse<T>` building a typed `{ statusCode, data }` envelope
 │
-└── chapter_30_PRIVATE_PUBLIC_PROTECTED/
-    ├── 218_PPP.ts                      - Access modifiers: `public`/`private`/`protected` on `APIClient`, and how `protected` is inherited by `UserAPIClient`
-    ├── 219_PageObjectModel.ts          - Real POM example: `protected` base URL/navigate in `BasePage`, extended by `Login`
-    ├── 220_READONLY.ts                 - `readonly` class properties: immutable `PlaywrightConfig` set only via constructor
-    └── 221_Abstract_Class.ts           - Abstract classes: `abstract class BaseTest` with abstract methods implemented by `UITest`
+├── chapter_30_PRIVATE_PUBLIC_PROTECTED/
+│   ├── 218_PPP.ts                      - Access modifiers: `public`/`private`/`protected` on `APIClient`, and how `protected` is inherited by `UserAPIClient`
+│   ├── 219_PageObjectModel.ts          - Real POM example: `protected` base URL/navigate in `BasePage`, extended by `Login`
+│   ├── 220_READONLY.ts                 - `readonly` class properties: immutable `PlaywrightConfig` set only via constructor
+│   └── 221_Abstract_Class.ts           - Abstract classes: `abstract class BaseTest` with abstract methods implemented by `UITest`
+│
+├── chapter_31_Type_Override_Decorators/
+│   ├── 222_Type_As.ts                  - Type assertion with `as`: narrowing an `unknown` value to a known interface shape
+│   ├── 223_Type_AliasAs.ts             - `as` continued: asserting a raw API response to a typed `UserResponse` interface
+│   ├── 224_Override.ts                 - `override` keyword: `BaseTest` → `LoginTest`/`APITest` explicitly overriding `setup()`
+│   ├── 225_IQ.ts                       - IQ: `override` on `Father` → `Pramod`, verifying which method runs per instance
+│   ├── 226_Decorator.ts                - Method decorators: `@Log` decorator logging arguments before calling the original method
+│   ├── 227_Decortors_2.ts              - Method decorators continued: minimal `@logged` decorator wrapping a method call
+│   └── 228_Multiple_Decor.ts           - Stacking multiple decorators: `@beforeSomething @BeforeSomething` execution order on `Dog.bark()`
+│
+└── chapter_32_Playwright_Fundamentals/
+    ├── playwright.config.ts            - Playwright config: HTML reporter, trace on first retry, Chromium project
+    ├── package.json                    - Project dependencies (@playwright/test, @types/node)
+    └── tests/
+        └── example.spec.ts             - Test: verify the TTA Cart login page title
 ```
 
 ## Topics Covered
@@ -599,6 +614,19 @@ A structured learning repository covering JavaScript fundamentals, TypeScript, a
 - Abstract classes (`abstract class`): defining a contract of abstract methods that subclasses must implement
 - Abstract classes can also include concrete (non-abstract) methods alongside abstract ones
 
+### Chapter 31 — Type Assertions, Override & Decorators
+- Type assertion with `as`: narrowing an `unknown` value to a known interface shape without runtime conversion
+- Real-world `as` usage: asserting a raw API response object to a typed interface
+- `override` keyword: explicitly marking a subclass method as overriding a parent method (compile-time safety)
+- IQ practice: tracing which overridden method runs for parent vs child instances
+- Method decorators (`@Decorator`): wrapping a class method to log/intercept calls before invoking the original
+- Stacking multiple decorators on a single method and understanding their execution order
+
+### Chapter 32 — Playwright Fundamentals
+- Fresh Playwright project setup: `package.json`, `playwright.config.ts`, `tsconfig.json`
+- `playwright.config.ts` options: `testDir`, `fullyParallel`, `reporter: 'html'`, `trace: 'on-first-retry'`, `projects`
+- First test: `page.goto` and `expect(page).toHaveTitle` against the TTA Cart login page
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or above recommended)
@@ -790,6 +818,23 @@ node chapter_30_PRIVATE_PUBLIC_PROTECTED/218_PPP.ts
 node chapter_30_PRIVATE_PUBLIC_PROTECTED/219_PageObjectModel.ts
 node chapter_30_PRIVATE_PUBLIC_PROTECTED/220_READONLY.ts
 node chapter_30_PRIVATE_PUBLIC_PROTECTED/221_Abstract_Class.ts
+
+# Chapter 31 — Type Assertions, Override & Decorators
+node chapter_31_Type_Override_Decorators/222_Type_As.ts
+node chapter_31_Type_Override_Decorators/223_Type_AliasAs.ts
+node chapter_31_Type_Override_Decorators/224_Override.ts
+node chapter_31_Type_Override_Decorators/225_IQ.ts
+node chapter_31_Type_Override_Decorators/226_Decorator.ts
+node chapter_31_Type_Override_Decorators/227_Decortors_2.ts
+node chapter_31_Type_Override_Decorators/228_Multiple_Decor.ts
+
+# Chapter 32 — Playwright Fundamentals (run from inside the chapter directory)
+cd chapter_32_Playwright_Fundamentals
+npx playwright test                        # run all tests
+npx playwright test --headed               # run with browser visible
+npx playwright show-report                 # open the HTML report
+cd ..
+
 node chapter_14_Objects/125_Objects2.js
 node chapter_14_Objects/126_Objects_Creation.js
 node chapter_14_Objects/127_Objects_REAL.js
